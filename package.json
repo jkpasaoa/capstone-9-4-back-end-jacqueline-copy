@@ -1,0 +1,29 @@
+{
+  "name": "9-4-capstone-team-6-backend",
+  "version": "1.0.0",
+  "description": "capstone_backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "db:setup": "psql -U postgres -f db/schema.sql && psql -U postgres -f db/seed.sql",
+    "db:shutdown": "pg_ctl -D \"../../Library/Application Support/Postgres/var-15\" stop",
+    "db:start": "pg_ctl -D \"../../Library/Application Support/Postgres/var-15\" start",
+    "db:setup1": "pgtools createdb tours",
+    "db:shutdown1": "pgtools dropdb tours",
+    "db:start1": "pgctl start tours",
+    "db:stop": "pgctl stop tours"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-router": "^0.0.1",
+    "http-proxy-middleware": "^2.0.6",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.0",
+    "pg-promise": "^11.5.3"
+  }
+}
